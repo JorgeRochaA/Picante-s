@@ -1,18 +1,20 @@
 <template>
-  <div>
+  <div class="N">
     <nav>
       <div class="logo">
         <img src="../assets/logo/logo.svg" alt="logo" />
         <h3>Picante´s</h3>
       </div>
-      <div class="links">
+      <div class="links" id="links">
+        <span class="exit" v-on:click="closeNav"
+          ><i class="fas fa-times"></i
+        ></span>
+        <h3>About Us</h3>
         <h3>Contact Us</h3>
-        <a href=""><i class="fab fa-facebook"></i></a>
-        <a href=""><i class="fab fa-twitter"></i></a>
-        <a href=""><i class="fab fa-instagram"></i></a>
+        <h3>Menu</h3>
       </div>
       <div class="mobile-button">
-        <span><i class="fas fa-bars"></i></span>
+        <span v-on:click="openNav"><i class="fas fa-bars"></i></span>
       </div>
     </nav>
   </div>
@@ -20,6 +22,19 @@
 <script>
 export default {
   name: "Navbar",
+  data() {
+    return {
+      menuStatus: true,
+    };
+  },
+  methods: {
+    openNav() {
+      document.getElementById("links").classList.add("open");
+    },
+    closeNav() {
+      document.getElementById("links").classList.remove("open");
+    },
+  },
 };
 </script>
 <style scoped lang="scss">
@@ -44,10 +59,8 @@ nav img {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-}
-.logo,
-.links a {
   color: black;
+  white-space: nowrap;
 }
 .logo {
   width: 25%;
@@ -66,36 +79,57 @@ nav img {
   transform: translateY(-10px);
   cursor: pointer;
 }
-.mobile-button{
+.mobile-button,
+.exit {
   display: none;
 }
-@media (min-width: 320px) and (max-width: 480px) {
-  nav{
-   position: relative;
-   height: 500px;
-   flex-direction: column;
-  }
+@media screen and (max-width: 1024px) { //phones and tablets
   .logo img {
     height: 50%;
   }
   .logo {
     width: 70%;
     font-size: 0.9rem;
-    justify-content: space-around;
+    justify-content: flex-start;
+  }
+  .logo img {
+    margin-left: 30px;
+  }
+  .logo h3 {
+    margin-left: 10px;
   }
   .links {
-    position: absolute;
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
     left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    justify-content: space-evenly;
     flex-direction: column;
-    flex-wrap: wrap;
-    background-color: firebrick;
+    color: black;
+    background-image: url("../assets/banner/banner.jpg");
+    background-size: cover;
+    background-position: center;
   }
-  .mobile-button{
+  .links a {
+    color: black;
+  }
+  .links.open {
+    width: 100vw;
+  }
+  .mobile-button {
     height: 100%;
     width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .exit {
+    display: initial;
   }
 }
 </style>
