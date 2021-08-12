@@ -9,9 +9,9 @@
         <span class="exit" v-on:click="closeNav"
           ><i class="fas fa-times"></i
         ></span>
-        <h3>About Us</h3>
-        <h3>Contact Us</h3>
-        <h3>Menu</h3>
+        <a href="#menu" v-on:click="closeNav">Menu</a>
+        <a href="#" v-on:click="closeNav">About Us</a>
+        <a href="#" v-on:click="closeNav">Contact Us</a>
       </div>
       <div class="mobile-button">
         <span v-on:click="openNav"><i class="fas fa-bars"></i></span>
@@ -73,6 +73,7 @@ nav img {
   font-size: 1.7rem;
   text-decoration: none;
   transition: 0.5s;
+color: black;
 }
 .links a:hover,
 .links h3:hover {
@@ -83,7 +84,8 @@ nav img {
 .exit {
   display: none;
 }
-@media screen and (max-width: 1024px) { //phones and tablets
+@media screen and (max-width: 1024px) {
+  //phones and tablets
   .logo img {
     height: 50%;
   }

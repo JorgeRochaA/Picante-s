@@ -9,6 +9,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-margin-top: 100px;
+}
+html {
+  scroll-behavior: smooth;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
