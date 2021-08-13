@@ -14,7 +14,7 @@
       <Category
         :categoryItems="this.categories"
         :foodItems="this.foods"
-        @filterActive="getValue"
+        @filterActive="getFoodFiltered"
       />
     </section>
     <svg
@@ -61,15 +61,14 @@ export default {
     return {
       categories: [],
       foods: [],
-      filterCategoryName: "",
     };
   },
   mounted() {
-    this.getCartegories();
+    this.getCategories(); // here we load the food categories and the food when the view is mounted
     this.getFoods();
   },
   methods: {
-    getCartegories() {
+    getCategories() { // this method get all the categories from firebase
       colectionCategory
         .get()
         .then((response) => {
@@ -81,7 +80,7 @@ export default {
           console.log(err);
         });
     },
-    getFoods() {
+    getFoods() { // this method get all the food from firebase
       colectionFood
         .get()
         .then((response) => {
@@ -93,14 +92,11 @@ export default {
           console.log(err);
         });
     },
-    getValue(value) {
-      this.filterCategoryName = value;
-      this.getFoodFiltered();
-    },
-    getFoodFiltered() {
+    getFoodFiltered(id) { // this method get the food from firebase depending of the 
+    // id that comes from Category.vue component
       this.foods = [];
       colectionFood
-        .where("type", "==", this.filterCategoryName)
+        .where("type", "==", id)
         .get()
         .then((response) => {
           response.docs.map((item) =>

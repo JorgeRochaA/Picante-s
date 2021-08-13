@@ -16,7 +16,8 @@ export default {
   name: "Sort",
   methods: {
     sortByPrice(lowOrHigh) {
-      this.$emit("sortByPrice", lowOrHigh);
+      this.$emit("sortByPrice", lowOrHigh); // here we emit this event to sort the price depending of the selection from the user
+      // you can search <Sort/> tag on the component Category.vue
     },
   },
 };

@@ -1,5 +1,5 @@
 <template>
-  <div class="N">
+  <div>
     <nav>
       <div class="logo">
         <img src="../assets/logo/logo.svg" alt="logo" />
@@ -24,7 +24,7 @@ export default {
   name: "Navbar",
   data() {
     return {
-      menuStatus: true,
+      menuStatus: true, // if the menu is close the status is going to be true
     };
   },
   methods: {

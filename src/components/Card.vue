@@ -15,7 +15,7 @@
 export default {
     name: "Card",
     props:{
-        foodItem: null,
+        foodItem: null, // this prop comes from Category.vue component
     }
 }
 </script>

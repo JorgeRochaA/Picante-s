@@ -19,16 +19,18 @@ export default {
     };
   },
   props: {
-    category_item: null,
+    category_item: null, // this prop comes from Category.vue component you can search <CategoryItem/> tag
   },
   methods: {
-    categoryActive(id) {
+    categoryActive(id) { // this method receives the id and is going to take all the items and save it in an array
+    // the id is the name of the category selected by the user
      let array =document.querySelectorAll(".category-item");
-     array.forEach(element => {
+     array.forEach(element => { // here we remove the active class from the items one by one
        element.classList.remove("active");
      });
-     document.getElementById(id).classList.add("active");
-     this.$emit("filterByCategory",id);
+     document.getElementById(id).classList.add("active"); // here we get the element with the id and add the class active
+     this.$emit("filterByCategory",id); // here we emit the event to filter the food 
+     // this event is going to be used in component Category.vue you can search <CategoryItem/> tag
     },
   },
 };

@@ -29,30 +29,22 @@ export default {
     Sort,
   },
   props: {
-    categoryItems: null,
-    foodItems: null,
-  },
-  data() {
-    return {
-      currentCategory: "",
-      sortValue: "",
-    };
+    categoryItems: null, // this prop comes from the view home.vue you can search the <Category/> tag on home.vue
+    foodItems: null, // this prop comes from the view home.vue you can search the <Category/> tag on home.vue
   },
   methods: {
     filterCategory(id) {
       this.$emit("filterActive", id);
     },
-    orderFoodByPrice(id) {
+    orderFoodByPrice(id) { // this method sort the food from the array depending of the id recieved from Sort component
       if (id == "LowToHigh") {
-        let newArray = this.foodItems.sort(
+        this.foodItems.sort(
           (a, b) => parseFloat(a.data.price) - parseFloat(b.data.price)
         );
-        id = newArray;
       } else if (id == "HighToLow") {
-        let newArray = this.foodItems.sort(
+        this.foodItems.sort(
           (a, b) => parseFloat(b.data.price) - parseFloat(a.data.price)
         );
-        this.foodItems = newArray;
       } else {
         console.log("error in sort");
       }
