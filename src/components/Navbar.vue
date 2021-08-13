@@ -10,7 +10,7 @@
           ><i class="fas fa-times"></i
         ></span>
         <a href="#menu" v-on:click="closeNav">Menu</a>
-        <a href="#" v-on:click="closeNav">About Us</a>
+        <a href="#about-us" v-on:click="closeNav">About Us</a>
         <a href="#" v-on:click="closeNav">Contact Us</a>
       </div>
       <div class="mobile-button">
