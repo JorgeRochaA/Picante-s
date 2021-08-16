@@ -37,7 +37,7 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss">
+<style scoped lang="css">
 @import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
 nav {
   height: 100px;
@@ -85,7 +85,6 @@ color: black;
   display: none;
 }
 @media screen and (max-width: 1024px) {
-  //phones and tablets
   .logo img {
     height: 50%;
   }

@@ -19,7 +19,7 @@ export default {
     }
 }
 </script>
-<style scoped lang="scss">
+<style scoped lang="css">
     .card {
   height: 250px;
   width: 200px;

@@ -13,7 +13,7 @@ export default {
   name: "Loading",
 };
 </script>
-<style scoped lang="scss">
+<style scoped lang="css">
 .lds-ellipsis {
   display: inline-block;
   position: relative;

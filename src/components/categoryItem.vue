@@ -35,7 +35,7 @@ export default {
   },
 };
 </script>
-<style scope lang="scss">
+<style scope lang="css">
 .category-item {
   display: flex;
   justify-content: space-evenly;

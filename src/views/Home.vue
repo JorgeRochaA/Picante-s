@@ -13,8 +13,8 @@
     <section class="category" id="menu">
       <Category
         :categoryItems="this.categories"
-        :foodItems="this.foods"
-        @filterActive="getFoodFiltered"
+        :foodItems="this.foodsFiltered"
+        @filterActive="filterFood"
       />
     </section>
     <svg
@@ -61,6 +61,7 @@ export default {
     return {
       categories: [],
       foods: [],
+      foodsFiltered: [],
     };
   },
   mounted() {
@@ -68,7 +69,8 @@ export default {
     this.getFoods();
   },
   methods: {
-    getCategories() { // this method get all the categories from firebase
+    getCategories() {
+      // this method get all the categories from firebase
       colectionCategory
         .get()
         .then((response) => {
@@ -80,38 +82,37 @@ export default {
           console.log(err);
         });
     },
-    getFoods() { // this method get all the food from firebase
+    getFoods() {
+      // this method get all the food from firebase
       colectionFood
         .get()
         .then((response) => {
           response.docs.map((item) =>
             this.foods.push({ id: item.id, data: item.data() })
+          );
+          response.docs.map((item) =>
+            this.foodsFiltered.push({ id: item.id, data: item.data() })
           );
         })
         .catch((err) => {
           console.log(err);
         });
     },
-    getFoodFiltered(id) { // this method get the food from firebase depending of the 
-    // id that comes from Category.vue component
-      this.foods = [];
-      colectionFood
-        .where("type", "==", id)
-        .get()
-        .then((response) => {
-          response.docs.map((item) =>
-            this.foods.push({ id: item.id, data: item.data() })
-          );
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+    filterFood(id){
+    this.foodsFiltered = [];
+    this.foods.forEach(element => {
+      if (element.data.type == id) {
+        setTimeout(() => {
+          this.foodsFiltered.push(element);
+        }, 500);
+      }
+    });
     },
   },
 };
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="css">
 @import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
 #Navbar {

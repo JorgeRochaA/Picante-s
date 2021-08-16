@@ -22,7 +22,7 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss">
+<style scoped lang="css">
 details {
   position: relative;
   width: 300px;

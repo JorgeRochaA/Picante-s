@@ -52,7 +52,7 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss">
+<style scoped lang="css">
 @import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Recursive&display=swap");
 h2 {
