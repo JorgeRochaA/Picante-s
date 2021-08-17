@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="loading">
     <div class="lds-ellipsis">
       <div></div>
       <div></div>

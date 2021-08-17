@@ -6,10 +6,10 @@
         @filterByCategory="filterCategory"
       />
       <Sort class="sort" @sortByPrice="orderFoodByPrice" />
-      <div class="food-container">
-        <Card v-for="food in foodItems" :key="food.index" :foodItem="food" />
-        <Loading v-if="foodItems.length <= 0" />
+      <div class="food-container" v-if="foodItems.length">
+        <Card v-for="food in foodItems" :key="food.id" :foodItem="food" />
       </div>
+      <Loading class="loading" v-if="foodItems.length <= 0" />
     </div>
   </div>
 </template>
@@ -81,12 +81,15 @@ h3 {
   padding: 50px;
 }
 .food-container {
-  min-height: 150px;
+  min-height: 500px;
   height: 100%;
   width: 100%;
   display: grid;
   justify-content: space-evenly;
-  align-items: center;
+}
+.loading {
+  width: 100%;
+  height: 300px;
 }
 @media screen and (min-width: 1281px) {
   .food-container {

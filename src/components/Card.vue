@@ -6,13 +6,7 @@
       </div>
       <div class="card-info">
         <h3 class="food-name">{{ foodItem.data.name }}</h3>
-        <p>
-          {{ foodItem.data.definition }}
-        </p>
-        <div class="card-price">
-          <h3>Price</h3>
-          <h4>${{ foodItem.data.price }}</h4>
-        </div>
+        <h3 class="price">Price $ {{ foodItem.data.price }}</h3>
       </div>
     </div>
   </div>
@@ -26,8 +20,9 @@ export default {
 };
 </script>
 <style scoped lang="css">
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 .card {
-  height: 300px;
+  height: 220px;
   width: 200px;
   background-color: #dce6fc;
   border-radius: 15px;
@@ -55,7 +50,7 @@ export default {
   height: 100%;
 }
 .card-info {
-  height: 200px;
+  height: 100px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -66,22 +61,10 @@ export default {
 }
 .food-name {
   width: 90%;
-  color: rgba(38, 29, 86, 1);
+  color: #3342aa;
 }
-.card-info p {
-  width: 90%;
-  color: rgba(38, 29, 86, 0.4);
-}
-.card-price{
-  width: 70%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.card-price h3{
-    color: rgba(38, 29, 86, 1);
-}
-.card-price h4{
-    color: rgba(38, 29, 86, 0.50);
+.price{
+ font-family: 'Roboto', sans-serif;
+ color: #3342aa;
 }
 </style>
