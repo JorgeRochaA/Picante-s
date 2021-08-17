@@ -1,29 +1,27 @@
 <template>
   <div>
     <div class="category">
-      <CategoryItem
-        v-for="categoryItem in categoryItems"
-        :key="categoryItem.data.id"
-        :category_item="categoryItem"
+      <CategoryFilterNav
+        :category_items="categoryItems"
         @filterByCategory="filterCategory"
       />
       <Sort class="sort" @sortByPrice="orderFoodByPrice" />
       <div class="food-container">
-        <Card v-for="food in foodItems" :key="food.data.id" :foodItem="food" />
+        <Card v-for="food in foodItems" :key="food.index" :foodItem="food" />
         <Loading v-if="foodItems.length <= 0" />
       </div>
     </div>
   </div>
 </template>
 <script>
-import CategoryItem from "../components/categoryItem.vue";
-import Card from "../components/Card.vue";
-import Loading from "../components/Loading.vue";
-import Sort from "../components/Sort.vue";
+import CategoryFilterNav from "../components/CategoryFilterNav.vue";
+import Card from "./Card.vue";
+import Loading from "./Loading.vue";
+import Sort from "./Sort.vue";
 export default {
-  name: "Category",
+  name: "CategoryFoodContainer",
   components: {
-    CategoryItem,
+    CategoryFilterNav,
     Card,
     Loading,
     Sort,
@@ -36,7 +34,8 @@ export default {
     filterCategory(id) {
       this.$emit("filterActive", id);
     },
-    orderFoodByPrice(id) { // this method sort the food from the array depending of the id recieved from Sort component
+    orderFoodByPrice(id) {
+      // this method sort the food from the array depending of the id recieved from Sort component
       if (id == "LowToHigh") {
         this.foodItems.sort(
           (a, b) => parseFloat(a.data.price) - parseFloat(b.data.price)
@@ -70,7 +69,7 @@ h3 {
   min-height: 100px;
   height: 100%;
   width: 100%;
-  background-color: blanchedalmond;
+  background-color: white;
   flex-wrap: wrap;
 }
 .sort {
@@ -82,12 +81,42 @@ h3 {
   padding: 50px;
 }
 .food-container {
-  min-height: 100px;
+  min-height: 150px;
   height: 100%;
   width: 100%;
-  display: flex;
+  display: grid;
   justify-content: space-evenly;
   align-items: center;
-  flex-wrap: wrap;
+}
+@media screen and (min-width: 1281px) {
+  .food-container {
+    grid-template-columns: auto auto auto auto;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .food-container {
+    grid-template-columns: auto auto auto auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .food-container {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: horizontal) {
+  .food-container {
+    grid-template-columns: auto auto auto auto;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .food-container {
+    grid-template-columns: auto auto;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .food-container {
+    grid-template-columns: auto;
+  }
 }
 </style>

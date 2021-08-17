@@ -37,8 +37,9 @@ summary {
   padding: 1rem;
   cursor: pointer;
   border-radius: 5px;
-  background-color: white;
+  background-color: #dce6fc;
   list-style: none;
+  color: #261d56;
 }
 
 summary::-webkit-details-marker {
@@ -90,7 +91,8 @@ ul {
   border-radius: 5px;
   max-height: 200px;
   overflow-y: auto;
-  background-color: white;
+  background-color: #dce6fc;
+  color: #261d56;
 }
 
 li {
@@ -98,7 +100,7 @@ li {
   padding: 1rem 0;
   border-bottom: 1px solid #ccc;
   list-style: none;
-  background-color: white;
+  background-color: #dce6fc;
   display: flex;
   justify-content: flex-start;
   transition: 0.5s;
