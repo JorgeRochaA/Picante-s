@@ -68,6 +68,9 @@ nav img {
 .links {
   width: 75%;
 }
+.links a{
+  font-weight: 600;
+}
 .links a,
 .links h3 {
   font-size: 1.7rem;
