@@ -6,7 +6,10 @@
       </div>
       <div class="card-info">
         <h3 class="food-name">{{ foodItem.data.name }}</h3>
-        <h3 class="price">Price $ {{ foodItem.data.price }}</h3>
+        <div class="price">
+            <h3 class="price-letters">Price</h3>
+          <h3>$ {{ foodItem.data.price }}</h3>
+        </div>
       </div>
     </div>
   </div>
@@ -61,10 +64,16 @@ export default {
 }
 .food-name {
   width: 90%;
-  color: #3342aa;
+  color: black;
 }
 .price{
+  width: 70%;
  font-family: 'Roboto', sans-serif;
- color: #3342aa;
+ display: flex;
+ justify-content: space-evenly;
+ align-items: center;
+}
+.price-letters{
+  color: #dd544f;
 }
 </style>

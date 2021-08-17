@@ -86,6 +86,7 @@ h3 {
   width: 100%;
   display: grid;
   justify-content: space-evenly;
+  align-items: center;
 }
 .loading {
   width: 100%;
