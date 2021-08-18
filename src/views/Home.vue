@@ -219,7 +219,7 @@ h3 {
     font-size: 3rem;
   }
 }
-@media (min-width: 100px) and (max-width: 1024px) and (orientation: portrait) {
+@media (min-width: 100px) and (max-width: 1024px) {
   .about-us{
     height: 100%;
   }
@@ -231,7 +231,8 @@ h3 {
     width: 100%;
   }
   .about-us-img img{
-    margin: 40px 0px;
+    margin-top: 40px;
+    margin-bottom: 20px;
    width: 70%;
   }
   .about-us-text{
@@ -242,39 +243,7 @@ h3 {
   .about-us-text p{
     width: 90%;
     line-height: 50px;
-    font-size: 1.5rem;
-  }
-}
-
-/* 
-  ##Dispositivo = Tablets, Ipads (horizontal)
-  ##Resolucion = B/w 768px to 1024px
-*/
-
-@media (min-width: 100px) and (max-width: 1024px) and (orientation: landscape) {
- .about-us{
-    height: 100%;
-  }
-  .about-us-container{
-    flex-direction: column;
-  }
-  .about-us-img{
-    height: 60%;
-    width: 100%;
-  }
-  .about-us-img img{
-    margin: 40px 0px;
-   width: 70%;
-  }
-  .about-us-text{
-    height: 40%;
-    width: 100%;
-  align-items: flex-start;
-  }
-  .about-us-text p{
-    width: 90%;
-    line-height: 50px;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 </style>
