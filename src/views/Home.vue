@@ -18,7 +18,28 @@
       />
     </section>
     <section class="about-us" id="about-us">
-      <h3>About Us</h3>
+      <div class="about-us-container">
+        <div class="about-us-img">
+          <img
+            src="https://www.serranos.com/wp-content/uploads/2017/08/footer-img-border.png"
+            alt="Family Lunch"
+          />
+          <h3>About Us</h3>
+        </div>
+        <div class="about-us-text">
+          <p>
+            Fancy a delicious Mexican meal? Maybe you're in the mood for some
+            tacos? No matter what type of food you have in mind, Picante's
+            Restaurant is ready to prepare it for you. Since 2003, Picante's
+            Restaurant has been the preferred place for residents of Houston,
+            Texas. Our restaurant healthy and tasty dining options, From tacos
+            to pizzas, burgers, and pastas, you will find all kinds of hearty
+            meals freshly prepared. We are here to serve you the best food in
+            the place, whenever you are looking for a great Mexican food
+            restaurant
+          </p>
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -79,21 +100,21 @@ export default {
           console.log(err);
         });
     },
-    filterFood(id){
-    this.foodsFiltered = [];
-    this.foods.forEach(element => {
-      if (element.data.type == id) {
-        setTimeout(() => {
-          this.foodsFiltered.push(element);
-        }, 500);
-      }
-    });
+    filterFood(id) {
+      this.foodsFiltered = [];
+      this.foods.forEach((element) => {
+        if (element.data.type == id) {
+          setTimeout(() => {
+            this.foodsFiltered.push(element);
+          }, 500);
+        }
+      });
     },
   },
 };
 </script>
 
-<style scoped lang="css">
+<style scoped lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
 #Navbar {
@@ -137,12 +158,43 @@ h3 {
 .about-us {
   height: 500px;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
 }
 .about-us h3 {
   font-family: "monoton";
+}
+.about-us-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #00717f;
+}
+.about-us-img {
+  height: 70%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.about-us-img h3 {
+  color: white;
+}
+.about-us-img img {
+  width: 70%;
+}
+.about-us-text {
+  height: 70%;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-us-text p {
+  width: 80%;
+  font-size: 1.2rem;
+  color: white;
+  line-height: 40px;
 }
 @media screen and (max-width: 1280px) {
   .info-container img {
@@ -153,7 +205,7 @@ h3 {
     width: 90%;
   }
 }
-@media screen and (min-width: 320px) and (max-width: 320px) and (orientation: portrait) {
+@media screen and (min-width: 100px) and (max-width: 320px) and (orientation: portrait) {
   h3 {
     font-size: 1.5rem;
   }
@@ -165,6 +217,64 @@ h3 {
   h3 {
     margin-top: 50px;
     font-size: 3rem;
+  }
+}
+@media (min-width: 100px) and (max-width: 1024px) and (orientation: portrait) {
+  .about-us{
+    height: 100%;
+  }
+  .about-us-container{
+    flex-direction: column;
+  }
+  .about-us-img{
+    height: 60%;
+    width: 100%;
+  }
+  .about-us-img img{
+    margin: 40px 0px;
+   width: 70%;
+  }
+  .about-us-text{
+    height: 40%;
+    width: 100%;
+  align-items: flex-start;
+  }
+  .about-us-text p{
+    width: 90%;
+    line-height: 50px;
+    font-size: 1.5rem;
+  }
+}
+
+/* 
+  ##Dispositivo = Tablets, Ipads (horizontal)
+  ##Resolucion = B/w 768px to 1024px
+*/
+
+@media (min-width: 100px) and (max-width: 1024px) and (orientation: landscape) {
+ .about-us{
+    height: 100%;
+  }
+  .about-us-container{
+    flex-direction: column;
+  }
+  .about-us-img{
+    height: 60%;
+    width: 100%;
+  }
+  .about-us-img img{
+    margin: 40px 0px;
+   width: 70%;
+  }
+  .about-us-text{
+    height: 40%;
+    width: 100%;
+  align-items: flex-start;
+  }
+  .about-us-text p{
+    width: 90%;
+    line-height: 50px;
+    font-size: 1.5rem;
   }
 }
 </style>
