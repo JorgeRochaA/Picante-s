@@ -20,13 +20,9 @@
     <section class="about-us" id="about-us">
       <div class="about-us-container">
         <div class="about-us-img">
-          <img
-            src="https://www.serranos.com/wp-content/uploads/2017/08/footer-img-border.png"
-            alt="Family Lunch"
-          />
-          <h3>About Us</h3>
         </div>
         <div class="about-us-text">
+                    <h3>About Us</h3>
           <p>
             Fancy a delicious Mexican meal? Maybe you're in the mood for some
             tacos? No matter what type of food you have in mind, Picante's
@@ -40,6 +36,9 @@
           </p>
         </div>
       </div>
+    </section>
+    <section class="contact-us">
+    
     </section>
   </div>
 </template>
@@ -156,7 +155,7 @@ h3 {
   font-family: "Bangers";
 }
 .about-us {
-  height: 500px;
+  height: 700px;
   width: 100%;
 }
 .about-us h3 {
@@ -165,36 +164,34 @@ h3 {
 .about-us-container {
   height: 100%;
   width: 100%;
-  display: flex;
-  align-items: center;
-  background-color: #00717f;
+  position: relative;
 }
 .about-us-img {
-  height: 70%;
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.about-us-img h3 {
-  color: white;
-}
-.about-us-img img {
-  width: 70%;
+height: 100%;
+width: 100%;
+background-image: url("../assets/about-banner.jpg");
+background-size: cover;
+opacity: 0.5;
 }
 .about-us-text {
-  height: 70%;
-  width: 70%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+height: 100%;
+width: 100%;
+position: absolute;
+top: 0;
+left: 0;
+display: flex;
+justify-content: space-evenly;
+flex-direction: column;
+align-items: center;
 }
 .about-us-text p {
   width: 80%;
-  font-size: 1.2rem;
-  color: white;
+  font-size: 1.3rem;
   line-height: 40px;
+}
+.contact-us {
+  height: 600px;
+  width: 100%;
 }
 @media screen and (max-width: 1280px) {
   .info-container img {
@@ -220,30 +217,22 @@ h3 {
   }
 }
 @media (min-width: 100px) and (max-width: 1024px) {
-  .about-us{
+  .about-us {
+    min-height: 1000px;
+  }
+  .about-us-img {
     height: 100%;
+    width: 100%;
+    background-position: center;
   }
-  .about-us-container{
-    flex-direction: column;
-  }
-  .about-us-img{
-    height: 60%;
+  .about-us-text {
+    height: 100%;
     width: 100%;
   }
-  .about-us-img img{
-    margin-top: 40px;
-    margin-bottom: 20px;
-   width: 70%;
-  }
-  .about-us-text{
-    height: 40%;
-    width: 100%;
-  align-items: flex-start;
-  }
-  .about-us-text p{
+  .about-us-text p {
     width: 90%;
     line-height: 50px;
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 </style>

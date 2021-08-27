@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav>
+    <nav class="animateLeft">
       <div class="logo">
         <img src="../assets/logo/logo.svg" alt="logo" />
         <h3>Picante´s</h3>
@@ -108,7 +108,7 @@ color: black;
     position: fixed;
     z-index: 1;
     top: 0;
-    left: 0;
+    right: 0;
     background-color: white;
     overflow-x: hidden;
     transition: 0.5s;
@@ -124,6 +124,7 @@ color: black;
   }
   .links.open {
     width: 100vw;
+    transition: .5s;
   }
   .mobile-button {
     height: 100%;

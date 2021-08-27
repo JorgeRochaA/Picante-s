@@ -5,7 +5,11 @@
         :category_items="categoryItems"
         @filterByCategory="filterCategory"
       />
-      <Sort v-if="foodItems.length" class="sort" @sortByPrice="orderFoodByPrice" />
+      <Sort
+        v-if="foodItems.length"
+        class="sort"
+        @sortByPrice="orderFoodByPrice"
+      />
       <div class="food-container" v-if="foodItems.length">
         <Card v-for="food in foodItems" :key="food.id" :foodItem="food" />
       </div>
