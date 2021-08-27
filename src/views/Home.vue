@@ -19,10 +19,9 @@
     </section>
     <section class="about-us" id="about-us">
       <div class="about-us-container">
-        <div class="about-us-img">
-        </div>
+        <div class="about-us-img"></div>
         <div class="about-us-text">
-                    <h3>About Us</h3>
+          <h3>About Us</h3>
           <p>
             Fancy a delicious Mexican meal? Maybe you're in the mood for some
             tacos? No matter what type of food you have in mind, Picante's
@@ -37,14 +36,35 @@
         </div>
       </div>
     </section>
-    <section class="contact-us">
-    
+    <section class="contact-us" id="contactUs">
+      <div class="contact-methods">
+        <h3>Picante´s Restaurant</h3>
+        <a href="#contactUs"><i class="fas fa-phone-alt"></i> Phone</a>
+        <a href="#contactUs"><i class="fab fa-whatsapp"></i> Whatsapp</a>
+      </div>
+      <div class="map-container">
+        <p>
+          We are located in 2350 Bagby St Houston, TX 77006, EE. UU. next to
+          Wonder Bar
+        </p>
+        <iframe
+          class="map"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13856.465164673424!2d-95.38002414754588!3d29.745347409993325!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640b8b4488d8501%3A0xca0d02def365053b!2sHouston%2C%20Texas%2C%20EE.%20UU.!5e0!3m2!1ses!2scr!4v1630092791993!5m2!1ses!2scr"
+          width="400"
+          height="300"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
     </section>
+    <Footer />
   </div>
 </template>
 <script>
 import Navbar from "../components/Navbar.vue";
 import CategoryFoodContainer from "../components/CategoryFoodContainer.vue";
+import Footer from "../components/Footer.vue";
 //firebase
 import firebase from "firebase";
 import db from "../dbFirebase/db.js";
@@ -57,6 +77,7 @@ export default {
   components: {
     Navbar,
     CategoryFoodContainer,
+    Footer,
   },
   data() {
     return {
@@ -167,22 +188,22 @@ h3 {
   position: relative;
 }
 .about-us-img {
-height: 100%;
-width: 100%;
-background-image: url("../assets/about-banner.jpg");
-background-size: cover;
-opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  background-image: url("../assets/about-banner.jpg");
+  background-size: cover;
+  opacity: 0.5;
 }
 .about-us-text {
-height: 100%;
-width: 100%;
-position: absolute;
-top: 0;
-left: 0;
-display: flex;
-justify-content: space-evenly;
-flex-direction: column;
-align-items: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
 }
 .about-us-text p {
   width: 80%;
@@ -192,6 +213,43 @@ align-items: center;
 .contact-us {
   height: 600px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.contact-methods {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.contact-methods a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.4rem;
+  transition: 0.2s;
+}
+.contact-methods a:hover:nth-child(2) {
+  color: #339af0;
+}
+.contact-methods a:hover:nth-child(3) {
+  color: #00bfa5;
+}
+.map-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.map-container p{
+  font-size: 1.2rem;
+  width: 30%;
+  line-height: 50px;
+}
+.map {
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 @media screen and (max-width: 1280px) {
   .info-container img {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="card">
+    <div class="card" :class="cardColor">
       <div class="card-img">
         <img :src="foodItem.data.img" :alt="foodItem.data.name" />
       </div>
@@ -19,15 +19,21 @@ export default {
   name: "Card",
   props: {
     foodItem: null, // this prop comes from Category.vue component
+    cardColor: String,
   },
 };
 </script>
 <style scoped lang="css">
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+.card.firstColor{
+  background-color: #dce6fc;
+}
+.card.secondColor{
+  background-color: #f2f2f2;
+}
 .card {
   height: 220px;
   width: 200px;
-  background-color: #dce6fc;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -35,6 +41,7 @@ export default {
   position: relative;
   margin: 50px 0px;
   color: black;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .card-img {
   height: 150px;

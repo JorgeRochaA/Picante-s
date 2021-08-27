@@ -11,7 +11,10 @@
         @sortByPrice="orderFoodByPrice"
       />
       <div class="food-container" v-if="foodItems.length">
-        <Card v-for="food in foodItems" :key="food.id" :foodItem="food" />
+        <div v-for="(food, index) in foodItems" :key="index">
+          <Card v-if="index % 2 == 0" :foodItem="food" :cardColor="'firstColor'" />
+           <Card v-else :foodItem="food" :cardColor="'secondColor'" />
+        </div>
       </div>
       <Loading class="loading" v-if="foodItems.length <= 0" />
     </div>
