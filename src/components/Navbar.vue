@@ -6,15 +6,13 @@
         <h3>Picante´s</h3>
       </div>
       <div class="links" id="links">
-        <span class="exit" v-on:click="closeNav"
-          ><i class="fas fa-times"></i
-        ></span>
         <a href="#menu" v-on:click="closeNav">Menu</a>
         <a href="#about-us" v-on:click="closeNav">About Us</a>
-        <a href="#" v-on:click="closeNav">Contact Us</a>
+        <a href="#contactUs" v-on:click="closeNav">Contact Us</a>
       </div>
       <div class="mobile-button">
-        <span v-on:click="openNav"><i class="fas fa-bars"></i></span>
+        <span v-if="menuIsClosed" v-on:click="openNav"><i class="fas fa-bars"></i></span>
+        <span v-if="!menuIsClosed" class="exit" v-on:click="closeNav"><i class="fas fa-times"></i></span>
       </div>
     </nav>
   </div>
@@ -24,15 +22,17 @@ export default {
   name: "Navbar",
   data() {
     return {
-      menuStatus: true, // if the menu is close the status is going to be true
+      menuIsClosed: true, // if the menu is close the status is going to be true
     };
   },
   methods: {
     openNav() {
       document.getElementById("links").classList.add("open");
+      this.menuIsClosed = false;
     },
     closeNav() {
       document.getElementById("links").classList.remove("open");
+      this.menuIsClosed = true;
     },
   },
 };
@@ -103,19 +103,18 @@ color: black;
     margin-left: 10px;
   }
   .links {
-    height: 100vh;
-    width: 0;
+    height: 0;
+    width: 100%;
     position: fixed;
     z-index: 1;
-    top: 0;
-    right: 0;
+    top: 13%;
+    left: 0;
     background-color: white;
     overflow-x: hidden;
     transition: 0.5s;
     justify-content: space-evenly;
     flex-direction: column;
     color: black;
-    background-image: url("../assets/banner/banner.jpg");
     background-size: cover;
     background-position: center;
   }
@@ -123,7 +122,7 @@ color: black;
     color: black;
   }
   .links.open {
-    width: 100vw;
+    height: 40vh;
     transition: .5s;
   }
   .mobile-button {
@@ -135,6 +134,11 @@ color: black;
   }
   .exit {
     display: initial;
+  }
+}
+@media screen and (max-width: 1024px) and (orientation: landscape){
+  .links{
+    top: 30%;
   }
 }
 </style>
