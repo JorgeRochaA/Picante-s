@@ -83,4 +83,5 @@ export default {
 .price-letters{
   color: #dd544f;
 }
+
 </style>

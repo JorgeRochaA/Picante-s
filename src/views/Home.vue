@@ -326,4 +326,5 @@ font-size: 2rem;
     width: 90%;
   }
 }
+
 </style>
