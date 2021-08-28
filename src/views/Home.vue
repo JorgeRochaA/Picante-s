@@ -38,33 +38,39 @@
     </section>
     <section class="contact-us" id="contactUs">
       <div class="contact-methods">
-        <h3>Picante´s Restaurant</h3>
-        <a href="#contactUs"><i class="fas fa-phone-alt"></i> Phone</a>
-        <a href="#contactUs"><i class="fab fa-whatsapp"></i> Whatsapp</a>
-      </div>
-      <div class="map-container">
+        <h4><i class="fas fa-map-marker-alt"></i></h4>
         <p>
           We are located in 2350 Bagby St Houston, TX 77006, EE. UU. next to
           Wonder Bar
         </p>
-        <iframe
-          class="map"
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13856.465164673424!2d-95.38002414754588!3d29.745347409993325!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640b8b4488d8501%3A0xca0d02def365053b!2sHouston%2C%20Texas%2C%20EE.%20UU.!5e0!3m2!1ses!2scr!4v1630092791993!5m2!1ses!2scr"
-          width="400"
-          height="300"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-        ></iframe>
+        <div class="contact-a">
+         <div class="contact-a-items-1">
+           <i class="fas fa-phone-alt"></i>
+            <a href="#contactUs">Phone</a>
+            
+         </div>
+         <div class="contact-a-items-2">
+           <i class="fab fa-whatsapp"></i>
+            <a href="#contactUs">Whatsapp</a>
+         </div>
+        </div>
       </div>
+      <iframe
+        class="map"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13856.465164673424!2d-95.38002414754588!3d29.745347409993325!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640b8b4488d8501%3A0xca0d02def365053b!2sHouston%2C%20Texas%2C%20EE.%20UU.!5e0!3m2!1ses!2scr!4v1630092791993!5m2!1ses!2scr"
+        width="400"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+      ></iframe>
     </section>
-    <Footer />
   </div>
 </template>
 <script>
 import Navbar from "../components/Navbar.vue";
 import CategoryFoodContainer from "../components/CategoryFoodContainer.vue";
-import Footer from "../components/Footer.vue";
+
 //firebase
 import firebase from "firebase";
 import db from "../dbFirebase/db.js";
@@ -77,7 +83,6 @@ export default {
   components: {
     Navbar,
     CategoryFoodContainer,
-    Footer,
   },
   data() {
     return {
@@ -219,33 +224,50 @@ h3 {
   align-items: center;
 }
 .contact-methods {
-  width: 100%;
+  height: 150px;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
-.contact-methods a {
-  text-decoration: none;
-  color: black;
+.contact-methods h4 {
+  font-size: 2rem;
+  color: #ea4335;
+}
+.contact-methods p {
   font-size: 1.4rem;
+  margin-top: 20px;
+}
+.contact-a a {
+  text-decoration: none;
+  font-size: 2rem;
   transition: 0.2s;
 }
-.contact-methods a:hover:nth-child(2) {
+.contact-a-items-1,
+.contact-a-items-2{
+  display: flex;
+  flex-direction: column;
+}
+.contact-a-items-1 i,
+.contact-a-items-2 i{
+font-size: 2rem;
+}
+.contact-a-items-1 a,
+.contact-a-items-1 i{
   color: #339af0;
 }
-.contact-methods a:hover:nth-child(3) {
+.contact-a-items-2 a,
+.contact-a-items-2 i{
   color: #00bfa5;
 }
-.map-container{
+.contact-a a:hover {
+  color: black;
+}
+.contact-a {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
-}
-.map-container p{
-  font-size: 1.2rem;
-  width: 30%;
-  line-height: 50px;
+  margin-top: 50px;
 }
 .map {
   border-radius: 10px;
@@ -291,6 +313,17 @@ h3 {
     width: 90%;
     line-height: 50px;
     font-size: 1.2rem;
+  }
+  .contact-us {
+    height: 650px;
+    flex-direction: column;
+  }
+  .contact-methods {
+    height: 200px;
+    width: 90%;
+  }
+  .map {
+    width: 90%;
   }
 }
 </style>
