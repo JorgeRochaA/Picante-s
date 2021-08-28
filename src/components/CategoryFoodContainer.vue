@@ -12,10 +12,8 @@
       />
       <div class="food-container" v-if="foodItems.length">
         <div v-for="(food, index) in foodItems" :key="index">
-          <div v-if="0">
             <Card v-if="index % 2 == 0" :foodItem="food" :cardColor="'firstColor'" />
              <Card v-else :foodItem="food" :cardColor="'secondColor'" />
-          </div>
         </div>
       </div>
       <Loading class="loading" v-if="foodItems.length <= 0" />
