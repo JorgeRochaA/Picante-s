@@ -13,6 +13,7 @@
       <div class="food-container" v-if="foodItems.length">
         <Card v-for="food in foodItems" :key="food.id" :foodItem="food" />
       </div>
+      
       <Loading class="loading" v-if="foodItems.length <= 0" />
     </div>
   </div>
