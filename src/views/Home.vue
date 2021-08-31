@@ -94,7 +94,7 @@ export default {
   },
   mounted() {
     this.getCategories(); // here we load the food categories and the food when the view is mounted
-    // this.getFoods();
+     this.getFoods();
   },
   methods: {
     getCategories() {
