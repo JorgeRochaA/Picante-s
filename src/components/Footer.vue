@@ -125,7 +125,7 @@ export default {
   align-items: center;
   text-align: center;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) and (orientation: portrait) {
   .mobileFooterItem{
     display: none;
   }
@@ -133,6 +133,11 @@ export default {
     width: 90%;
     justify-self: center;
     align-self: center;
+  }
+}
+@media screen and (min-width: 100px) and (orientation: landscape) {
+  .contact-item h5:nth-child(3){
+    display: none;
   }
 }
 </style>
