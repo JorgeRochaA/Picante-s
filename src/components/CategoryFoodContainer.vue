@@ -16,7 +16,6 @@
              <Card v-else :foodItem="food" :cardColor="'secondColor'" />
         </div>
       </div>
-      
       <Loading class="loading" v-if="foodItems.length <= 0" />
     </div>
   </div>

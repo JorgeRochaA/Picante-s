@@ -38,21 +38,20 @@
     </section>
     <section class="contact-us" id="contactUs">
       <div class="contact-methods">
-        <h4><i class="fas fa-map-marker-alt"></i></h4>
+      <h4><i class="fas fa-map-marker-alt"></i></h4>
         <p>
           We are located in 2350 Bagby St Houston, TX 77006, EE. UU. next to
           Wonder Bar
         </p>
         <div class="contact-a">
-         <div class="contact-a-items-1">
-           <i class="fas fa-phone-alt"></i>
+          <div class="contact-a-items-1">
+            <i class="fas fa-phone-alt"></i>
             <a href="#contactUs">Phone</a>
-            
-         </div>
-         <div class="contact-a-items-2">
-           <i class="fab fa-whatsapp"></i>
+          </div>
+          <div class="contact-a-items-2">
+            <i class="fab fa-whatsapp"></i>
             <a href="#contactUs">Whatsapp</a>
-         </div>
+          </div>
         </div>
       </div>
       <iframe
@@ -65,12 +64,13 @@
         loading="lazy"
       ></iframe>
     </section>
+    <Footer />
   </div>
 </template>
 <script>
 import Navbar from "../components/Navbar.vue";
 import CategoryFoodContainer from "../components/CategoryFoodContainer.vue";
-
+import Footer from "../components/Footer.vue";
 //firebase
 import firebase from "firebase";
 import db from "../dbFirebase/db.js";
@@ -83,6 +83,7 @@ export default {
   components: {
     Navbar,
     CategoryFoodContainer,
+    Footer,
   },
   data() {
     return {
@@ -93,7 +94,7 @@ export default {
   },
   mounted() {
     this.getCategories(); // here we load the food categories and the food when the view is mounted
-    this.getFoods();
+    // this.getFoods();
   },
   methods: {
     getCategories() {
@@ -197,7 +198,7 @@ h3 {
   width: 100%;
   background-image: url("../assets/about-banner.jpg");
   background-size: cover;
-  opacity: 0.5;
+  opacity: .7;
 }
 .about-us-text {
   height: 100%;
@@ -244,20 +245,20 @@ h3 {
   transition: 0.2s;
 }
 .contact-a-items-1,
-.contact-a-items-2{
+.contact-a-items-2 {
   display: flex;
   flex-direction: column;
 }
 .contact-a-items-1 i,
-.contact-a-items-2 i{
-font-size: 2rem;
+.contact-a-items-2 i {
+  font-size: 2rem;
 }
 .contact-a-items-1 a,
-.contact-a-items-1 i{
+.contact-a-items-1 i {
   color: #339af0;
 }
 .contact-a-items-2 a,
-.contact-a-items-2 i{
+.contact-a-items-2 i {
   color: #00bfa5;
 }
 .contact-a a:hover {
@@ -326,5 +327,4 @@ font-size: 2rem;
     width: 90%;
   }
 }
-
 </style>
