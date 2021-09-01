@@ -197,7 +197,9 @@ h3 {
   width: 100%;
   background-image: url("../assets/about-banner.jpg");
   background-size: cover;
-  opacity: 0.7;
+  background-attachment: fixed;
+  background-position-x: center;
+  opacity: .5;
 }
 .about-us-text {
   height: 100%;
@@ -221,6 +223,11 @@ h3 {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  background-image: url("../assets/location.svg");
+  background-size:  contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
 }
 table{
   height: 100%;

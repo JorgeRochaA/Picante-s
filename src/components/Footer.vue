@@ -5,17 +5,17 @@
       <div class="social-media">
         <div class="contact-info">
           <div class="contact-item">
-            <a href="#"><i class="fas fa-map-marker-alt"></i></a>
+            <a href="https://www.google.com/maps/dir//Midtown+Houston,+Houston,+Texas+77006,+EE.+UU./@29.7477054,-95.3812352,16z/data=!4m9!4m8!1m0!1m5!1m1!1s0x8640bf4216062a47:0x4d41797789764a39!2m2!1d-95.3791508!2d29.7506658!3e0"><i class="fas fa-map-marker-alt"></i></a>
             <h5 class="mobileFooterItem">2350 Bagby St Houston Texas, USA</h5>
             <h5>Visit Us</h5>
           </div>
           <div class="contact-item">
-            <a href="#"><i class="fas fa-phone-alt"></i></a>
+            <a href="tel:+14094404645"><i class="fas fa-phone-alt"></i></a>
             <h5 class="mobileFooterItem">+1 409-440-4645</h5>
             <h5>Call Us</h5>
           </div>
           <div class="contact-item">
-            <a href="#"><i class="fas fa-envelope"></i></a>
+            <a href="mailto:picantes.retaurante@gmail.com?Subject=Restaurant%20Infomation"><i class="fas fa-envelope"></i></a>
             <h5 class="mobileFooterItem">picantes.retaurante@gmail.com</h5>
             <h5>Send Email</h5>
           </div>

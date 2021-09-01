@@ -30,6 +30,18 @@ export default {
     };
   },
   created() {
+    function mobileOrientation() {
+      switch (window.orientation) {
+        case -90:
+        case 90:
+          document.getElementById("links").style.top = "30%";
+          break;
+        default:
+          document.getElementById("links").style.top = "13%";
+          break;
+      }
+    }
+    window.addEventListener("orientationchange", mobileOrientation);
     let initialScroll = window.pageYOffset;
     window.onscroll = function () {
       let currentScroll = window.pageYOffset;
@@ -38,11 +50,7 @@ export default {
         document.getElementById("links").style.top = "-1000px";
       } else {
         document.getElementById("Navbar").style.top = "0px";
-        if (window.orientation === 0) {
-          document.getElementById("links").style.top = "13%";
-        } else {
-          document.getElementById("links").style.top = "30%";
-        }
+        mobileOrientation();
         document.getElementById("Navbar").style.transition = ".5s";
       }
       initialScroll = currentScroll;
