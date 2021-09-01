@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="animateLeft">
+    <nav id="Navbar">
       <div class="logo">
         <img src="../assets/logo/logo.svg" alt="logo" />
         <h3>Picante´s</h3>
@@ -11,8 +11,12 @@
         <a href="#contactUs" v-on:click="closeNav">Contact Us</a>
       </div>
       <div class="mobile-button">
-        <span v-if="menuIsClosed" v-on:click="openNav"><i class="fas fa-bars"></i></span>
-        <span v-if="!menuIsClosed" class="exit" v-on:click="closeNav"><i class="fas fa-times"></i></span>
+        <span v-if="menuIsClosed" v-on:click="openNav"
+          ><i class="fas fa-bars"></i
+        ></span>
+        <span v-if="!menuIsClosed" class="exit" v-on:click="closeNav"
+          ><i class="fas fa-times"></i
+        ></span>
       </div>
     </nav>
   </div>
@@ -23,6 +27,25 @@ export default {
   data() {
     return {
       menuIsClosed: true, // if the menu is close the status is going to be true
+    };
+  },
+  created() {
+    let initialScroll = window.pageYOffset;
+    window.onscroll = function () {
+      let currentScroll = window.pageYOffset;
+      if (initialScroll <= currentScroll) {
+        document.getElementById("Navbar").style.top = "-1000px";
+        document.getElementById("links").style.top = "-1000px";
+      } else {
+        document.getElementById("Navbar").style.top = "0px";
+        if (window.orientation === 0) {
+          document.getElementById("links").style.top = "13%";
+        } else {
+          document.getElementById("links").style.top = "30%";
+        }
+        document.getElementById("Navbar").style.transition = ".5s";
+      }
+      initialScroll = currentScroll;
     };
   },
   methods: {
@@ -68,7 +91,7 @@ nav img {
 .links {
   width: 75%;
 }
-.links a{
+.links a {
   font-weight: 600;
 }
 .links a,
@@ -76,7 +99,7 @@ nav img {
   font-size: 1.7rem;
   text-decoration: none;
   transition: 0.5s;
-color: black;
+  color: black;
 }
 .links a:hover,
 .links h3:hover {
@@ -123,7 +146,7 @@ color: black;
   }
   .links.open {
     height: 40vh;
-    transition: .5s;
+    transition: 0.5s;
   }
   .mobile-button {
     height: 100%;
@@ -136,10 +159,9 @@ color: black;
     display: initial;
   }
 }
-@media screen and (max-width: 1024px) and (orientation: landscape){
-  .links{
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .links {
     top: 30%;
   }
 }
-
 </style>
