@@ -37,29 +37,28 @@
       </div>
     </section>
     <section class="contact-us" id="contactUs">
-      <div class="contact-methods">
-      <h4><i class="fas fa-map-marker-alt"></i></h4>
-        <p>
-          We are located in 2350 Bagby St Houston, TX 77006, EE. UU. next to
-          Wonder Bar
-        </p>
-        <div class="contact-a">
-          <div class="contact-a-items-1">
-            <i class="fas fa-phone-alt"></i>
-            <a href="#contactUs">Phone</a>
-          </div>
-          <div class="contact-a-items-2">
-            <i class="fab fa-whatsapp"></i>
-            <a href="#contactUs">Whatsapp</a>
-          </div>
-        </div>
+      <div class="contact-us-info">
+        <table>
+          <tr>
+            <td><img src="../assets/mapMark.svg" alt="map mark" /></td>
+            <td><p>We are located in Bagby</p></td>
+          </tr>
+          <tr>
+            <td><img src="../assets/texas.svg" alt="texas" /></td>
+            <td><p>Houston, Texas, U.S.A</p></td>
+          </tr>
+          <tr>
+            <td><img src="../assets/whatsapp.svg" alt="Whatsapp" /></td>
+            <td><p>+1 409-440-4645</p></td>
+          </tr>
+        </table>
       </div>
       <iframe
         class="map"
         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13856.465164673424!2d-95.38002414754588!3d29.745347409993325!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640b8b4488d8501%3A0xca0d02def365053b!2sHouston%2C%20Texas%2C%20EE.%20UU.!5e0!3m2!1ses!2scr!4v1630092791993!5m2!1ses!2scr"
         width="400"
         height="300"
-        style="border:0;"
+        style="border: 0"
         allowfullscreen=""
         loading="lazy"
       ></iframe>
@@ -94,7 +93,7 @@ export default {
   },
   mounted() {
     this.getCategories(); // here we load the food categories and the food when the view is mounted
-     this.getFoods();
+    this.getFoods();
   },
   methods: {
     getCategories() {
@@ -198,7 +197,7 @@ h3 {
   width: 100%;
   background-image: url("../assets/about-banner.jpg");
   background-size: cover;
-  opacity: .7;
+  opacity: 0.7;
 }
 .about-us-text {
   height: 100%;
@@ -220,55 +219,30 @@ h3 {
   height: 600px;
   width: 100%;
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+table{
+  height: 100%;
+  width: 60%;
+}
+.contact-us-info {
+  height: 40%;
+  width: 50%;
+  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
-.contact-methods {
-  height: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+.contact-us-info h4 {
+  font-size: 3rem;
+  color: red;
 }
-.contact-methods h4 {
-  font-size: 2rem;
-  color: #ea4335;
+.contact-us-info p {
+  font-size: 1.5rem;
 }
-.contact-methods p {
-  font-size: 1.4rem;
-  margin-top: 20px;
-}
-.contact-a a {
-  text-decoration: none;
-  font-size: 2rem;
-  transition: 0.2s;
-}
-.contact-a-items-1,
-.contact-a-items-2 {
-  display: flex;
-  flex-direction: column;
-}
-.contact-a-items-1 i,
-.contact-a-items-2 i {
-  font-size: 2rem;
-}
-.contact-a-items-1 a,
-.contact-a-items-1 i {
-  color: #339af0;
-}
-.contact-a-items-2 a,
-.contact-a-items-2 i {
-  color: #00bfa5;
-}
-.contact-a a:hover {
-  color: black;
-}
-.contact-a {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 50px;
+.contact-us-info img {
+  height: 50px;
 }
 .map {
   border-radius: 10px;
@@ -286,15 +260,6 @@ h3 {
 @media screen and (min-width: 100px) and (max-width: 320px) and (orientation: portrait) {
   h3 {
     font-size: 1.5rem;
-  }
-}
-@media screen and (max-width: 1280px) and (orientation: landscape) {
-  .info-container img {
-    display: none;
-  }
-  h3 {
-    margin-top: 50px;
-    font-size: 3rem;
   }
 }
 @media (min-width: 100px) and (max-width: 1024px) {
@@ -319,12 +284,26 @@ h3 {
     height: 650px;
     flex-direction: column;
   }
-  .contact-methods {
-    height: 200px;
+  table{
     width: 90%;
+  }
+  .contact-us-info{
+    width: 100%;
   }
   .map {
     width: 90%;
+  }
+}
+@media screen and (max-width: 1280px) and (orientation: landscape) {
+  .info-container img {
+    display: none;
+  }
+  h3 {
+    margin-top: 50px;
+    font-size: 3rem;
+  }
+  table{
+    width: 70%;
   }
 }
 </style>
