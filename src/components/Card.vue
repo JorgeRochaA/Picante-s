@@ -26,10 +26,10 @@ export default {
 <style scoped lang="css">
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 .card.firstColor{
-  background-color: #dce6fc;
+  background-color: #ea964e;
 }
 .card.secondColor{
-  background-color: #f2f2f2;
+  background-color: #4f848a;
 }
 .card {
   height: 220px;
@@ -40,21 +40,21 @@ export default {
   align-items: center;
   position: relative;
   margin: 50px 0px;
-  color: black;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .card-img {
   height: 150px;
   width: 150px;
   border-radius: 50%;
   border: 10px solid white;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
   position: absolute;
   top: -20%;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .card-img img {
   height: 100%;
@@ -71,7 +71,7 @@ export default {
 }
 .food-name {
   width: 90%;
-  color: black;
+  color: whitesmoke;
 }
 .price{
   width: 70%;
@@ -79,9 +79,10 @@ export default {
  display: flex;
  justify-content: space-evenly;
  align-items: center;
+ color: white;
 }
 .price-letters{
-  color: #dd544f;
+ color: black;
 }
 
 </style>
