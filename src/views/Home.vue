@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <ContactButton/>
     <section id="main">
       <div class="navbar-container">
         <Navbar id="Navbar" />
@@ -47,10 +48,6 @@
             <td><img src="../assets/texas.svg" alt="texas" /></td>
             <td><p>Houston, Texas, U.S.A</p></td>
           </tr>
-          <tr>
-            <td><img src="../assets/whatsapp.svg" alt="Whatsapp" /></td>
-            <td><p>+1 409-440-4645</p></td>
-          </tr>
         </table>
       </div>
       <iframe
@@ -67,6 +64,7 @@
   </div>
 </template>
 <script>
+import ContactButton from "../components/ContactButton.vue";
 import Navbar from "../components/Navbar.vue";
 import CategoryFoodContainer from "../components/CategoryFoodContainer.vue";
 import Footer from "../components/Footer.vue";
@@ -80,6 +78,7 @@ const colectionFood = dataBase.collection("food");
 export default {
   name: "Home",
   components: {
+    ContactButton,
     Navbar,
     CategoryFoodContainer,
     Footer,
