@@ -3,7 +3,7 @@
     <ContactButton/>
     <section id="main">
       <div class="navbar-container">
-        <Navbar id="Navbar" />
+      <Navbar/>
       </div>
       <div class="info-container">
         <img src="../assets/skull-flag-1.png" alt="skull-flag-1" />
@@ -141,11 +141,6 @@ export default {
 <style scoped lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
-#Navbar {
-  position: fixed;
-  width: 100%;
-  top: 0;
-}
 #main {
   height: 100vh;
   width: 100%;
