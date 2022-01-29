@@ -31,9 +31,9 @@ export default {
       menuIsClosed: true, // if the menu is close the status is going to be true
     };
   },
-  created(){
-        let initialScroll = window.pageYOffset;
-    window.onscroll = function () {
+  created() {
+    let initialScroll = window.pageYOffset;
+    window.onscroll = function() {
       let currentScroll = window.pageYOffset;
       if (initialScroll <= currentScroll) {
         document.getElementById("Navbar").style.top = "-1000px";
@@ -45,13 +45,13 @@ export default {
     };
   },
   methods: {
-    openNav() {
-      document.getElementById("Navbar").classList.add("open");
-      this.menuIsClosed = false;
-    },
     closeNav() {
       document.getElementById("Navbar").classList.remove("open");
       this.menuIsClosed = true;
+    },
+    openNav() {
+      document.getElementById("Navbar").classList.add("open");
+      this.menuIsClosed = false;
     },
   },
 };

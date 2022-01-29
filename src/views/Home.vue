@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-    <ContactButton/>
+    <ContactButton />
     <section id="main">
       <div class="navbar-container">
-      <Navbar/>
+        <Navbar />
       </div>
       <div class="info-container">
         <img src="../assets/skull-flag-1.png" alt="skull-flag-1" />
@@ -64,13 +64,13 @@
   </div>
 </template>
 <script>
-import ContactButton from "../components/ContactButton.vue";
-import Navbar from "../components/Navbar.vue";
 import CategoryFoodContainer from "../components/CategoryFoodContainer.vue";
+import ContactButton from "../components/ContactButton.vue";
 import Footer from "../components/Footer.vue";
+import Navbar from "../components/Navbar.vue";
 //firebase
-import firebase from "firebase";
 import db from "../dbFirebase/db.js";
+import firebase from "firebase";
 firebase.initializeApp(db);
 const dataBase = firebase.firestore();
 const colectionCategory = dataBase.collection("foodCategory");
@@ -78,10 +78,10 @@ const colectionFood = dataBase.collection("food");
 export default {
   name: "Home",
   components: {
-    ContactButton,
-    Navbar,
     CategoryFoodContainer,
+    ContactButton,
     Footer,
+    Navbar,
   },
   data() {
     return {
@@ -95,6 +95,16 @@ export default {
     this.getFoods();
   },
   methods: {
+    filterFood(id) {
+      this.foodsFiltered = [];
+      this.foods.forEach((element) => {
+        if (element.data.type == id) {
+          setTimeout(() => {
+            this.foodsFiltered.push(element);
+          }, 500);
+        }
+      });
+    },
     getCategories() {
       // this method get all the categories from firebase
       colectionCategory
@@ -124,23 +134,13 @@ export default {
           console.log(err);
         });
     },
-    filterFood(id) {
-      this.foodsFiltered = [];
-      this.foods.forEach((element) => {
-        if (element.data.type == id) {
-          setTimeout(() => {
-            this.foodsFiltered.push(element);
-          }, 500);
-        }
-      });
-    },
   },
 };
 </script>
 
 <style scoped lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
 #main {
   height: 100vh;
   width: 100%;
@@ -193,7 +193,7 @@ h3 {
   background-size: cover;
   background-attachment: fixed;
   background-position-x: center;
-  opacity: .5;
+  opacity: 0.5;
 }
 .about-us-text {
   height: 100%;
@@ -218,12 +218,11 @@ h3 {
   justify-content: space-evenly;
   align-items: center;
   background-image: url("../assets/location.svg");
-  background-size:  contain;
+  background-size: contain;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
 }
-table{
+table {
   height: 100%;
   width: 60%;
 }
@@ -285,10 +284,10 @@ table{
     height: 650px;
     flex-direction: column;
   }
-  table{
+  table {
     width: 90%;
   }
-  .contact-us-info{
+  .contact-us-info {
     width: 100%;
   }
   .map {
@@ -303,7 +302,7 @@ table{
     margin-top: 50px;
     font-size: 3rem;
   }
-  table{
+  table {
     width: 70%;
   }
 }

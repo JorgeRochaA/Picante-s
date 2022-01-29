@@ -7,7 +7,7 @@
       <div class="card-info">
         <h3 class="food-name">{{ foodItem.data.name }}</h3>
         <div class="price">
-            <h3 class="price-letters">Price</h3>
+          <h3 class="price-letters">Price</h3>
           <h3>$ {{ foodItem.data.price }}</h3>
         </div>
       </div>
@@ -18,17 +18,17 @@
 export default {
   name: "Card",
   props: {
-    foodItem: null, // this prop comes from Category.vue component
     cardColor: String,
+    foodItem: null, // this prop comes from Category.vue component
   },
 };
 </script>
 <style scoped lang="css">
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-.card.firstColor{
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+.card.firstColor {
   background-color: #ea964e;
 }
-.card.secondColor{
+.card.secondColor {
   background-color: #4f848a;
 }
 .card {
@@ -41,7 +41,8 @@ export default {
   position: relative;
   margin: 50px 0px;
   color: white;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .card-img {
   height: 150px;
@@ -73,16 +74,15 @@ export default {
   width: 90%;
   color: whitesmoke;
 }
-.price{
+.price {
   width: 70%;
- font-family: 'Roboto', sans-serif;
- display: flex;
- justify-content: space-evenly;
- align-items: center;
- color: white;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
 }
-.price-letters{
- color: black;
+.price-letters {
+  color: black;
 }
-
 </style>

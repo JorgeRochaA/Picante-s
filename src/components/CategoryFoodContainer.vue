@@ -12,8 +12,12 @@
       />
       <div class="food-container" v-if="foodItems.length">
         <div v-for="(food, index) in foodItems" :key="index">
-            <Card v-if="index % 2 == 0" :foodItem="food" :cardColor="'firstColor'" />
-             <Card v-else :foodItem="food" :cardColor="'secondColor'" />
+          <Card
+            v-if="index % 2 == 0"
+            :foodItem="food"
+            :cardColor="'firstColor'"
+          />
+          <Card v-else :foodItem="food" :cardColor="'secondColor'" />
         </div>
       </div>
       <Loading class="loading" v-if="foodItems.length <= 0" />
@@ -21,15 +25,15 @@
   </div>
 </template>
 <script>
-import CategoryFilterNav from "../components/CategoryFilterNav.vue";
 import Card from "./Card.vue";
+import CategoryFilterNav from "../components/CategoryFilterNav.vue";
 import Loading from "./Loading.vue";
 import Sort from "./Sort.vue";
 export default {
   name: "CategoryFoodContainer",
   components: {
-    CategoryFilterNav,
     Card,
+    CategoryFilterNav,
     Loading,
     Sort,
   },
@@ -130,5 +134,4 @@ h3 {
     grid-template-columns: auto;
   }
 }
-
 </style>
