@@ -41,7 +41,15 @@
       <div class="contact-us-info">
         <table>
           <tr>
-            <td><img src="../assets/mapMark.svg" alt="map mark" /></td>
+            <td>
+              <lord-icon
+                src="https://cdn.lordicon.com/fihkmkwt.json"
+                trigger="hover"
+                colors="primary:#121331,secondary:#c71f16"
+                style="width:75px;height:75px"
+              >
+              </lord-icon>
+            </td>
             <td><p>We are located in Bagby</p></td>
           </tr>
           <tr>
@@ -217,9 +225,10 @@ h3 {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-image: url("../assets/location.svg");
-  background-size: contain;
+  background-image: url("https://cdn.pixabay.com/photo/2016/08/10/19/20/texas-1584104_960_720.jpg");
+  background-size: 100% 100%;
   background-repeat: no-repeat;
+  background-position: center center;
   background-attachment: fixed;
 }
 table {
@@ -234,12 +243,10 @@ table {
   justify-content: space-evenly;
   align-items: center;
 }
-.contact-us-info h4 {
-  font-size: 3rem;
-  color: red;
-}
+
 .contact-us-info p {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  color: white;
 }
 .contact-us-info img {
   height: 50px;
@@ -283,6 +290,8 @@ table {
   .contact-us {
     height: 650px;
     flex-direction: column;
+    background-size: cover;
+    background-position: center left;
   }
   table {
     width: 90%;
