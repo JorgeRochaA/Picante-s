@@ -37,9 +37,9 @@ summary {
   padding: 1rem;
   cursor: pointer;
   border-radius: 5px;
-  background-color: #dce6fc;
+  background-color: #1f1d2b;
   list-style: none;
-  color: #261d56;
+  color: white;
 }
 
 summary::-webkit-details-marker {
@@ -91,8 +91,8 @@ ul {
   border-radius: 5px;
   max-height: 200px;
   overflow-y: auto;
-  background-color: #dce6fc;
-  color: #261d56;
+  background-color: #1f1d2b;
+  color: white;
 }
 
 li {
@@ -100,14 +100,14 @@ li {
   padding: 1rem 0;
   border-bottom: 1px solid #ccc;
   list-style: none;
-  background-color: #dce6fc;
+  background-color: #1f1d2b;
   display: flex;
   justify-content: flex-start;
   transition: 0.5s;
 }
 li:hover {
   cursor: pointer;
-  color: #3342aa;
+  color: #03abec;
 }
 li:first-child {
   padding-top: 0;

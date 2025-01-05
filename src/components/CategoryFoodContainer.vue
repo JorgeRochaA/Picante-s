@@ -80,7 +80,7 @@ h3 {
   min-height: 100px;
   height: 100%;
   width: 100%;
-  background-color: white;
+  background-color: #faeccb;
   flex-wrap: wrap;
 }
 .sort {
